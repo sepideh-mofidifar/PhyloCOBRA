@@ -7,9 +7,11 @@ This folder contains the original MICOM package, with a key modification to the 
 Building community models:
 ##
 from micom.data import test_db
-from micom.workflows import build
-manifest = build(data, out_folder="models", model_db=test_db, cutoff=0.0001, threads=2)
 
+from micom.workflows import build
+
+manifest = build(data, out_folder="models", model_db=test_db, cutoff=0.0001, threads=2)
+##
 
 
 analysis Folder:
