@@ -4,14 +4,14 @@ PhyloMICOM is an extension of the MICOM package, designed to improve the accurac
 micom Folder:
 This folder contains the original MICOM package, with a key modification to the community.py file. The modification, known as PhyloMICOM, pools the metabolic models of phylogenetically related organisms at the order level. This allows for more accurate and phylogenetically-informed simulations of microbial communities.
 
-Building community models:
-##
+#Building community models:
+
 <tab><tab>from micom.data import test_db
 
 from micom.workflows import build
 
 manifest = build(data, out_folder="models", model_db=test_db, cutoff=0.0001, threads=2)
-##
+
 
 
 analysis Folder:
