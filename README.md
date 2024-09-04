@@ -6,8 +6,7 @@ This folder contains the original MICOM package, with a key modification to the 
 
 Building community models:
 ##
-<tab><tab>
-from micom.data import test_db
+<tab><tab>from micom.data import test_db
 
 from micom.workflows import build
 
