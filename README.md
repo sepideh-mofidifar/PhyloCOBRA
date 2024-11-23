@@ -4,7 +4,7 @@ PhyloMICOM is an extension of the MICOM package, designed to improve the accurac
 <h3 style="font-size: 16px;">Installation</h3>
 PhyloMICOM is available on PyPi and can be installed via
 
-<code>pip install PhyloMICOM==0.1.0<code><h3 style="font-size: 20px;">micom Folder</h3>
+<code>pip install PhyloMICOM==0.1.0<code><h3 style="font-size: 16px;">micom Folder</h3>
 
 This folder contains the original MICOM package, with a key modification to the community.py file. The modification, known as PhyloMICOM, pools the metabolic models of phylogenetically related organisms at the order level. This allows for more accurate and phylogenetically-informed simulations of microbial communities.
 <div>
@@ -14,9 +14,9 @@ from micom import load_pickle
 from micom.workflows import build
 from micom.data import test_medium
 from micom.qiime_formats import load_qiime_medium
-<h3 style="font-size: 16px;">Building community models:</h3>
+<h3 style="font-size: 20px;">Building community models:</h3>
 manifest = build(data, out_folder="models", model_db=test_db, cutoff=0.0001, threads=2)
-<h3 style="font-size: 16px;">Perform a community simulation:</h3>
+<h3 style="font-size: 20px;">Perform a community simulation:</h3>
 medium = load_qiime_medium('western_diet_gut.qza')
 growth_results = grow(manifest, model_folder="models", medium=medium, tradeoff=0.5, threads=2)
     </code>
@@ -24,7 +24,7 @@ growth_results = grow(manifest, model_folder="models", medium=medium, tradeoff=0
   <button onclick="copyCode()"></button>
 </div>
 
-<h3 style="font-size: 16px;">analysis Folder</h3>
+<h3 style="font-size: 20px;">analysis Folder</h3>
 
 This folder includes a collection of Python scripts used to analyze microbial communities. These scripts are tailored to work with the PhyloMICOM framework and provide tools for various types of analyses, such as sensitivity testing, growth rate prediction, and statistical evaluations.
 
