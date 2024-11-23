@@ -1,7 +1,7 @@
 # PhyloMICOM
 PhyloMICOM is an extension of the MICOM package, designed to improve the accuracy and efficiency of microbial community simulations by incorporating phylogenetic relationships. This project introduces a modified version of the community.py file from the MICOM package, along with additional scripts and data for analysis.
 
-###Installation
+<h3 style="font-size: 16px;">Installation</h3>
 PhyloMICOM is available on PyPi and can be installed via
 pip install PhyloMICOM==0.1.0
 
