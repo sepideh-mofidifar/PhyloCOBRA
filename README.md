@@ -4,7 +4,11 @@ PhyloMICOM is an extension of the MICOM package, designed to improve the accurac
 <h3 style="font-size: 16px;">Installation</h3>
 PhyloMICOM is available on PyPi and can be installed via
 <div>
+  <pre>
+    <code>
 pip install PhyloMICOM==0.1.0
+    <code>
+  <pre>   
 </div>
 
 <h3 style="font-size: 16px;">micom Folder</h3>
