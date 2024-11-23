@@ -6,8 +6,6 @@ PhyloMICOM is available on PyPi and can be installed via
 
 <code>pip install PhyloMICOM==0.1.0<code><h3 style="font-size: 16px;">micom Folder</h3>
 This folder contains the original MICOM package, with a key modification to the community.py file. The modification, known as PhyloMICOM, pools the metabolic models of phylogenetically related organisms at the order level. This allows for more accurate and phylogenetically-informed simulations of microbial communities.
-
-
 <div>
   <pre>
     <code>
