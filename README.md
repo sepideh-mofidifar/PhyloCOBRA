@@ -51,7 +51,7 @@ growth_results = grow(manifest, model_folder="models", medium=medium, tradeoff=0
 
 <h3>License</h3>
 
-<p>PhyloMICOM is developed for non-commercial use and is provided as-is. Contributions are welcome and appreciated. For inquiries about collaborations or commercial usage and development, please contact us at <a href="mailto:s.mofidifar@gmail.com">s.mofidifar@gmail.com</a>.</p>
+<p>[1] PhyloMICOM is developed for non-commercial use and is provided as-is. Contributions are welcome and appreciated. For inquiries about collaborations or commercial usage and development, please contact us at <a href="mailto:s.mofidifar@gmail.com">s.mofidifar@gmail.com</a>.</p>
 
 <h3>Reference</h3>
 
