@@ -53,5 +53,9 @@ growth_results = grow(manifest, model_folder="models", medium=medium, tradeoff=0
 
 <p>PhyloMICOM is developed for non-commercial use and is provided as-is. Contributions are welcome and appreciated. For inquiries about collaborations or commercial usage and development, please contact us at <a href="mailto:s.mofidifar@gmail.com">s.mofidifar@gmail.com</a>.</p>
 
+<h3>Reference</h3>
+
+<p>Diener CGibbons SM, Resendis-Antonio O 2020. MICOM: Metagenome-Scale Modeling To Infer Metabolic Interactions in the Gut Microbiota. mSystems 5:10.1128/msystems.00606-19.
+https://doi.org/10.1128/msystems.00606-19</p>
 </body>
 </html>
