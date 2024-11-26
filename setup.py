@@ -15,7 +15,6 @@ setup(
     url="https://github.com/sepideh-mofidifar/PhyloMICOM",  # URL of the GitHub repository
     packages=find_packages(),  # Automatically find all the sub-packages (like micom, data, analysis)
     install_requires=[  # External dependencies (if any)
-        "micom",  # Include micom if it's a dependency
         "cobra",  # Example, adjust based on your package's needs
     ],
     classifiers=[  # Optional: classifiers help users find your project
