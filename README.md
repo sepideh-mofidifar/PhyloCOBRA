@@ -1,7 +1,7 @@
 
 <h1>PhyloMICOM</h1>
 
-<p>PhyloMICOM is an extension of the <strong>MICOM</strong> package [1], designed to improve the accuracy and efficiency of microbial community simulations by incorporating phylogenetic relationships. This project introduces a modified version of the <code>community.py</code> file from the MICOM package, along with additional scripts and data for analysis.</p>
+<p>PhyloMICOM is an extension of the <strong>MICOM</strong> package [1], designed to improve the accuracy and efficiency of microbial community simulations by incorporating phylogenetic relationships. This project introduces a modified version of the <code>community.py</code> file from the MICOM package. This modification, pools the metabolic models of phylogenetically related organisms at the order level which allows for more accurate and phylogenetically-informed simulations of microbial communities.</p>
 
 <h3>Installation</h3>
 
@@ -9,9 +9,6 @@
 
 <pre><code>pip install PhyloMICOM==0.1.0</code></pre>
 
-<h3>micom Folder</h3>
-
-<p>This folder contains the original <strong>MICOM</strong> package, with a key modification to the <code>community.py</code> file. The modification, known as <strong>PhyloMICOM</strong>, pools the metabolic models of phylogenetically related organisms at the order level. This allows for more accurate and phylogenetically-informed simulations of microbial communities.</p>
 
 <h4>Example usage:</h4>
 
