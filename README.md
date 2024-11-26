@@ -13,7 +13,6 @@
 <h3>Example usage:</h3>
 
 <p>To use the PhyloMICOM package, you can import the following functions:</p>
-
 <pre><code>
 from micom import load_pickle
 from micom.workflows import build
