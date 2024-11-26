@@ -23,16 +23,13 @@ from micom.qiime_formats import load_qiime_medium
 
 <p>To build a community model with PhyloMICOM, you can use the following code:</p>
 
-<pre><code>
-manifest = build(data, out_folder="models", model_db=test_db, cutoff=0.0001, threads=2)
-</code></pre>
+<pre><code>manifest = build(data, out_folder="models", model_db=test_db, cutoff=0.0001, threads=2)</code></pre>
 
 <h4>Performing a community simulation:</h4>
 
 <p>To perform a community simulation, you can load your Qiime medium and run the model:</p>
 
-<pre><code>
-medium = load_qiime_medium('western_diet_gut.qza')
+<pre><code>medium = load_qiime_medium('western_diet_gut.qza')
 growth_results = grow(manifest, model_folder="models", medium=medium, tradeoff=0.5, threads=2)
 </code></pre>
 
