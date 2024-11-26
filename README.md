@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhyloMICOM</title>
-</head>
-<body>
 
-
+<h1>PhyloMICOM</h1>
 
 <p>PhyloMICOM is an extension of the <strong>MICOM</strong> package, designed to improve the accuracy and efficiency of microbial community simulations by incorporating phylogenetic relationships. This project introduces a modified version of the <code>community.py</code> file from the MICOM package, along with additional scripts and data for analysis.</p>
 
