@@ -22,9 +22,7 @@ from functools import partial
 import pandas as pd
 import numpy as np
 from rich.progress import track
-from micom import data
-import statistics
-from micom.optcom import add_moma_optcom
+
 
 def regularize_l2_norm(community, min_growth):
     """Add an objective to find the most "egoistic" solution.
@@ -53,27 +51,17 @@ def regularize_l2_norm(community, min_growth):
     """
     logger.info("adding L2 norm to %s" % community.id)
     l2 = Zero
-    l3 = Zero
     community.variables.community_objective.lb = min_growth
     context = get_context(community)
     if context is not None:
         context(partial(reset_min_community_growth, community))
-    ex_comunity = community.variables.community_objective
-    for sp in range(len(community.taxa)):
-        for j in range(sp + 1, len(community.taxa)):
-            #adding new constrain
-            const_sp=community.constraints["objective_" + community.taxa[sp]]
-            const_j=community.constraints["objective_" + community.taxa[j]]
-            ex_sp = sum(v for v in const_sp.variables if (v.ub - v.lb) > 1e-6)
-            ex_j = sum(v for v in const_j.variables if (v.ub - v.lb) > 1e-6)
-            ex_spj = ex_sp - ex_j
-            #retrieving distance_value
-            similarity_value=1
-    #version1 just adding our term
-            if similarity_value>0:
-                l2 += ((similarity_value * ex_spj)**2).expand()
-    l3=ex_comunity -(0.1 * l2)
-    community.objective = -l3
+
+    for sp in community.taxa:
+        taxa_obj = community.constraints["objective_" + sp]
+        ex = sum(v for v in taxa_obj.variables if (v.ub - v.lb) > 1e-6)
+        if not isinstance(ex, int):
+            l2 += (community.scale * (ex**2)).expand()
+    community.objective = -l2
     community.modification = "l2 regularization"
     logger.info("finished adding tradeoff objective to %s" % community.id)
 
@@ -98,23 +86,13 @@ def cooperative_tradeoff(community, min_growth, fraction, fluxes, pfba, atol, rt
 
         # Add needed variables etc.
         regularize_l2_norm(com, 0.0)
-#        p,term2,term1=regularize_l2_norm(com, 0.0)
-#        fra=1
-#        term2=fra* term2
         results = []
         for fr in fraction:
-#            term1=fr* term1
-#            ex = (p - term2 - term1)**2
-#            community.objective = -ex
             com.variables.community_objective.lb = fr * min_growth
             com.variables.community_objective.ub = min_growth
             sol = solve(community, fluxes=fluxes, pfba=pfba, atol=atol, rtol=rtol)
-            # OSQP is better with QPs then LPs
-            # so it won't get better with the crossover
-            if not pfba and sol.status != OPTIMAL and solver != "osqp":
-                sol = crossover(
-                    com, sol, fluxes=fluxes
-                )
+            if not pfba and sol.status != OPTIMAL:
+                sol = crossover(com, sol, fluxes=fluxes)
             results.append((fr, sol))
         if len(results) == 1:
             return results[0][1]
@@ -153,7 +131,7 @@ def knockout_taxa(community, taxa, fraction, method, progress, diag=True):
                     new /= old
                 results.append(new)
 
-        ko = pd.DataFrame(results, index=taxa).drop("medium", 1)
+        ko = pd.DataFrame(results, index=taxa).drop("medium", axis=1)
         ko = ko.loc[ko.index.sort_values(), ko.columns.sort_values()]
         if not diag:
             np.fill_diagonal(ko.values, np.NaN)
