@@ -14,7 +14,9 @@ agora["file"] = agora["id"] + ".xml"
 
 test_db = join(this_dir, "artifacts", "species_models.qza")
 test_medium = join(this_dir, "artifacts", "medium.qza")
-
+##load phylogenetic_distance
+with open(join(this_dir,'calculatedDistanceMatrix.json'), 'r') as json_file:
+    phylogenetic_distance = json.load(json_file)
     
 def test_taxonomy(n=4):
     """Create a simple test taxonomy.
