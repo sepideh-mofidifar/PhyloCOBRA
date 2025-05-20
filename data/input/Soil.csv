@@ -1,0 +1,5 @@
+strain,genus,samples,abundance,file
+Pedobacter sp. D749,Bacteroides,id,0.04,/home/sysbio/Documents/Microbe Community/sequence/Pedobacter.json
+Rhodococcus globerulus,Rhodococcus,id,22.53,/home/sysbio/Documents/Microbe Community/sequence/Rhodococcus.json
+Stenotrophomonas indicatrix,Stenotrophomonas,id,68.96,/home/sysbio/Documents/Microbe Community/sequence/Stenotrophomonas.json
+Chryseobacterium sp. D749,Capnocytophaga,id,8.47,/home/sysbio/Documents/Microbe Community/sequence/Chryseobacterium.json
